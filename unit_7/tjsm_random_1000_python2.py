@@ -3,7 +3,7 @@
 ''' 
     * @author: Xwl_Yu.
 '''
-#说明:三局两胜,随机选择马的顺序
+#说明:比赛1000场,每场三局两胜
 
 import random
 
@@ -26,6 +26,19 @@ def tianji_gongzi():
 
     return len(winer_per)
 
+
+
+def t_win_per(times):
+    t_win_times = []
+    for i in range(0,times):
+        a = tianji_gongzi()
+        if a >=2:
+            t_win_times.append(a)
+    return len(t_win_times)
+
+
+
 if __name__ == '__main__':
-    tj = tianji_gongzi()
+    tj = t_win_per(1000)
     print (tj)
+
